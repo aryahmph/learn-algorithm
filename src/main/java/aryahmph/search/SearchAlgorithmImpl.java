@@ -3,6 +3,8 @@ package aryahmph.search;
 public class SearchAlgorithmImpl implements SearchAlgorithm {
     /**
      * Search algorithm without requiring sorted data.
+     * <p>
+     * Time Complexity, O(n)
      *
      * @param data
      * @param target
@@ -24,6 +26,9 @@ public class SearchAlgorithmImpl implements SearchAlgorithm {
      * This algorithm has 2 pointers namely middle, left and right so that it seems to divide the array in two.
      * <p>
      * First find the middle index of the array, then compare it with the target, if the target value is greater then it shifts the left pointer, and vice versa.
+     * <p>
+     * Time Complexity, T(n) = T(n/2) + c
+     * Auxiliary Space: O(1)
      *
      * @param data
      * @param target
@@ -37,15 +42,14 @@ public class SearchAlgorithmImpl implements SearchAlgorithm {
 
         while (left <= right) {
             mid = (left + right) >>> 1;
-            if (data[mid] == target)
+            if (data[mid] == target) {
                 return mid;
-            else if (target > data[mid])
+            } else if (target > data[mid]) {
                 left = mid + 1;
-            else
+            } else {
                 right = mid - 1;
-
+            }
         }
-
         return -1;
     }
 }

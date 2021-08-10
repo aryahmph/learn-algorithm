@@ -4,9 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-public class SearchAlgorithmImplTest {
+public class SortAlgorithmImplTest {
     private SortAlgorithm sortAlgorithm;
 
     @BeforeEach
@@ -30,6 +28,25 @@ public class SearchAlgorithmImplTest {
 
         int[] data4 = {};
         sortAlgorithm.bubbleSortAsc(data4);
+        Assertions.assertArrayEquals(new int[]{}, data4);
+    }
+
+    @Test
+    void TestSelectionSort() {
+        int[] data = {2, 4, 1, 2, 5};
+        sortAlgorithm.selectionSortAsc(data);
+        Assertions.assertArrayEquals(new int[]{1, 2, 2, 4, 5}, data);
+
+        int[] data2 = {6, 4};
+        sortAlgorithm.selectionSortAsc(data2);
+        Assertions.assertArrayEquals(new int[]{4, 6}, data2);
+
+        int[] data3 = {6};
+        sortAlgorithm.selectionSortAsc(data3);
+        Assertions.assertArrayEquals(new int[]{6}, data3);
+
+        int[] data4 = {};
+        sortAlgorithm.selectionSortAsc(data4);
         Assertions.assertArrayEquals(new int[]{}, data4);
     }
 }

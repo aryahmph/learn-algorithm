@@ -45,4 +45,20 @@ public class ArrayAlgorithmImplTest {
         int[] array = {};
         Assertions.assertThrows(IllegalArgumentException.class, () -> arrayAlgorithm.findMin(array));
     }
+
+    @Test
+    void TestSum() {
+        int total = arrayAlgorithm.sum(1, 2, 3, 4, 5);
+        Assertions.assertEquals(15, total);
+
+        total = arrayAlgorithm.sum();
+        Assertions.assertEquals(0, total);
+    }
+
+    @Test
+    void TestAvgEmptyValues() {
+        int[] array = {};
+        Assertions.assertThrows(ArithmeticException.class, () -> arrayAlgorithm.avg());
+    }
+
 }

@@ -2,6 +2,7 @@ package aryahmph.array;
 
 public class ArrayAlgorithmImpl implements ArrayAlgorithm {
     /**
+     * Search maximum value in array
      * Best Case : O(1)
      * Worst Case : O(n)
      *
@@ -21,6 +22,7 @@ public class ArrayAlgorithmImpl implements ArrayAlgorithm {
     }
 
     /**
+     * Search minimum value in array
      * Best Case : O(1)
      * Worst Case : O(n)
      *
@@ -39,13 +41,34 @@ public class ArrayAlgorithmImpl implements ArrayAlgorithm {
         return array[minIdx];
     }
 
+    /**
+     * Sum all number
+     *
+     * @param values
+     * @return total number
+     */
     @Override
     public int sum(int... values) {
-        return 0;
+        int total = 0;
+        for (int value : values) {
+            total += value;
+        }
+        return total;
     }
 
+    /**
+     * Average all number
+     *
+     * @param values
+     * @return average number
+     */
     @Override
     public double avg(int... values) {
-        return 0;
+        if (values.length < 1) throw new ArithmeticException("divided by zero");
+        double total = 0;
+        for (int value : values) {
+            total += value;
+        }
+        return total / values.length;
     }
 }

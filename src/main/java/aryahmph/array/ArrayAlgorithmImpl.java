@@ -2,8 +2,11 @@ package aryahmph.array;
 
 public class ArrayAlgorithmImpl implements ArrayAlgorithm {
     /**
+     * Best Case : O(1)
+     * Worst Case : O(n)
+     *
      * @param array
-     * @return max value in array || IllegalArgumentException
+     * @return maximum value in array || IllegalArgumentException
      */
     @Override
     public int findMax(int[] array) {
@@ -17,9 +20,23 @@ public class ArrayAlgorithmImpl implements ArrayAlgorithm {
         return array[maxIdx];
     }
 
+    /**
+     * Best Case : O(1)
+     * Worst Case : O(n)
+     *
+     * @param array
+     * @return minimum value in array || IllegalArgumentException
+     */
     @Override
     public int findMin(int[] array) {
-        return 0;
+        int len = array.length;
+        if (len < 1) throw new IllegalArgumentException("array is empty");
+
+        int minIdx = array[0];
+        for (int i = 1; i < len; i++) {
+            if (array[i] < array[minIdx]) minIdx = i;
+        }
+        return array[minIdx];
     }
 
     @Override

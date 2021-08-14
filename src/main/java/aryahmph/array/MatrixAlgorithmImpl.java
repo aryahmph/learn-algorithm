@@ -1,5 +1,8 @@
 package aryahmph.array;
 
+import aryahmph.sort.SortAlgorithm;
+import aryahmph.sort.SortAlgorithmImpl;
+
 public class MatrixAlgorithmImpl implements MatrixAlgorithm {
 
     /**
@@ -23,6 +26,26 @@ public class MatrixAlgorithmImpl implements MatrixAlgorithm {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 result[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Merubah baris menjadi kolom atau sebaliknya.
+     *
+     * @param matrix
+     * @return
+     */
+    @Override
+    public int[][] transpose(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+        int[][] result = new int[col][row];
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                result[i][j] = matrix[j][i];
             }
         }
         return result;

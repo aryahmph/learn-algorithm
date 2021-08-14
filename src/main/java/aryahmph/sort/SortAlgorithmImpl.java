@@ -63,7 +63,7 @@ public class SortAlgorithmImpl implements SortAlgorithm {
      * @param index1
      * @param index2
      */
-    private void swap(int[] data, int index1, int index2) {
+    public static void swap(int[] data, int index1, int index2) {
         int temp = data[index1];
         data[index1] = data[index2];
         data[index2] = temp;

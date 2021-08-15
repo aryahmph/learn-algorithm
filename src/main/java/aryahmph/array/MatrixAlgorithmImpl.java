@@ -30,7 +30,7 @@ public class MatrixAlgorithmImpl implements MatrixAlgorithm {
     }
 
     /**
-     * Merubah baris menjadi kolom atau sebaliknya.
+     * Convert rows to columns or vice versa.
      *
      * @param matrix
      * @return
@@ -49,6 +49,12 @@ public class MatrixAlgorithmImpl implements MatrixAlgorithm {
         return result;
     }
 
+    /**
+     * Sum values in a column.
+     *
+     * @param matrix
+     * @return
+     */
     @Override
     public int[] sumMatrixColumn(int[][] matrix) {
         int row = matrix.length;
@@ -63,7 +69,6 @@ public class MatrixAlgorithmImpl implements MatrixAlgorithm {
             result[i] = sum;
             sum = 0;
         }
-
         return result;
     }
 }

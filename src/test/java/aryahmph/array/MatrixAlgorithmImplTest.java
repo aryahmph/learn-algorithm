@@ -35,4 +35,15 @@ public class MatrixAlgorithmImplTest {
         int[][] result = matrixAlgorithm.transpose(matrix);
         Assertions.assertArrayEquals(new int[][]{{2, 4}, {1, 6}, {3, 5}}, result);
     }
+
+    @Test
+    void TestSumMatrixColumn() {
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[] result = matrixAlgorithm.sumMatrixColumn(matrix);
+        Assertions.assertArrayEquals(new int[]{12, 15, 18}, result);
+
+        int[][] matrix2 = {{1, 2}, {3, 4}};
+        int[] result2 = matrixAlgorithm.sumMatrixColumn(matrix2);
+        Assertions.assertArrayEquals(new int[]{4, 6}, result2);
+    }
 }

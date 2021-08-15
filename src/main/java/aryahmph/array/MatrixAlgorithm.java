@@ -4,4 +4,6 @@ public interface MatrixAlgorithm {
     int[][] sumTwoMatrix(int[][] matrix1, int[][] matrix2);
 
     int[][] transpose(int[][] matrix);
+
+    int[] sumMatrixColumn(int[][] matrix);
 }

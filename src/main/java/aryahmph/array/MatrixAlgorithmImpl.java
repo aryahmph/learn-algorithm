@@ -1,7 +1,5 @@
 package aryahmph.array;
 
-import aryahmph.sort.SortAlgorithm;
-import aryahmph.sort.SortAlgorithmImpl;
 
 public class MatrixAlgorithmImpl implements MatrixAlgorithm {
 
@@ -48,6 +46,24 @@ public class MatrixAlgorithmImpl implements MatrixAlgorithm {
                 result[i][j] = matrix[j][i];
             }
         }
+        return result;
+    }
+
+    @Override
+    public int[] sumMatrixColumn(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+        int[] result = new int[col];
+        int sum = 0;
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                sum += matrix[j][i];
+            }
+            result[i] = sum;
+            sum = 0;
+        }
+
         return result;
     }
 }
